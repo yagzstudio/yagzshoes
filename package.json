@@ -1,0 +1,34 @@
+{
+  "name": "yagzshoes",
+  "version": "2.7.0",
+  "description": "YagzShoes Enterprise POS & Stok Yönetim Sistemi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "stop": "cmd /c durdur.bat",
+    "quick": "baslat.bat",
+    "clean": "node scripts/clean_store_data.js",
+    "test": "node test/run_tests.js",
+    "test:all": "node test/reset_db.js && node test/run_tests.js && node test/operational_tests.js",
+    "test:operational": "node test/operational_tests.js",
+    "test:reset": "node test/reset_db.js",
+    "test:setup": "node test/setup_test_db.js",
+    "test:isolated": "node test/setup_test_db.js && cross-env TEST_DB_PATH=data/yagzshoes_test.db PORT=3001 node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.9",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.7.3",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.5.0",
+    "uuid": "^14.0.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}
